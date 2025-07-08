@@ -5,29 +5,29 @@ import styled from "styled-components";
 const Preloader = ({ setLoading }) => {
   const [counter, setCounter] = useState(0);
 
-  async function reveal() {
-    const t1 =  gsap.timeline({});
-
-      await t1
-      .to(".follow", {
-        width: "100%",
-        ease: Expo.easeInOut,
-        duration: 1.2,
-        delay: 0.5,
-      })
-      .to(".hide", { opacity: 0, duration: 0.3 })
-      .to(".follow", {
-        height: "100%",
-        ease: Expo.easeInOut,
-        duration: 0.7,
-      })
-      .to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.7 });
-    if (!t1.isActive()) {
-       await setLoading(false);
-    }
-  }
-
   useEffect(() => {
+    async function reveal() {
+      const t1 =  gsap.timeline({});
+
+        await t1
+        .to(".follow", {
+          width: "100%",
+          ease: Expo.easeInOut,
+          duration: 1.2,
+          delay: 0.5,
+        })
+        .to(".hide", { opacity: 0, duration: 0.3 })
+        .to(".follow", {
+          height: "100%",
+          ease: Expo.easeInOut,
+          duration: 0.7,
+        })
+        .to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.7 });
+      if (!t1.isActive()) {
+         await setLoading(false);
+      }
+    }
+
     const count = setInterval(() => {
       setCounter((counter) =>
         counter < 100
@@ -35,7 +35,7 @@ const Preloader = ({ setLoading }) => {
           : (clearInterval(count), setCounter(100), reveal())
       );
     }, 25);
-  }, [reveal]);
+  }, [setLoading]);
 
   return (
     <AppContainer>
