@@ -13,6 +13,13 @@ const Landing = () => {
 
   return (
     <div id="landing" className={styles.landing}>
+      <div className={styles.photoOverlay}>
+        <img
+          src={require("../../img/myphoto.png")}
+          alt="Gowtham Sree Charan Reddy"
+          className={styles.overlayPhoto}
+        />
+      </div>
       <div className={styles.left}>
         <div className={styles.leftWrapper}>
           <h2
@@ -22,7 +29,6 @@ const Landing = () => {
           >
             Heyy!, My name is
           </h2>
-          <Logo />
           <h1
             data-aos="fade-in"
             data-aos-duration="2000"
