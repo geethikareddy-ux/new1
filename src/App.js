@@ -1,5 +1,6 @@
 import Landing from "./components/Landing/Landing";
 import ProjectList from "./components/ProjectList/ProjectList";
+import Skills from "./components/Skills/Skills";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Social from "./components/Social/Social";
@@ -19,6 +20,7 @@ function App() {
           <Navbar />
           <Social />
           <Landing />
+          <Skills />
           <ProjectList />
           <About />
           <Contact />

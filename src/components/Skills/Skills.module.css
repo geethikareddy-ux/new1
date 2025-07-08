@@ -1,0 +1,142 @@
+.skills {
+  min-height: 100vh;
+  padding: 100px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 60px;
+  color: #cccccc;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.skillCard:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+}
+
+.skillIcon {
+  font-size: 50px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.skillCard:hover .skillIcon {
+  color: #4a9eff;
+  transform: scale(1.1);
+}
+
+.skillName {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.skillCategory {
+  font-size: 14px;
+  font-weight: 300;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 80px 20px;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .skillCard {
+    padding: 20px 15px;
+  }
+  
+  .skillIcon {
+    font-size: 40px;
+  }
+  
+  .skillName {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills {
+    padding: 60px 15px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skillCard {
+    padding: 15px 10px;
+  }
+  
+  .skillIcon {
+    font-size: 35px;
+  }
+  
+  .skillName {
+    font-size: 16px;
+  }
+  
+  .skillCategory {
+    font-size: 12px;
+  }
+}

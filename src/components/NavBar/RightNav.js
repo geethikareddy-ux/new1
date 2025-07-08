@@ -65,6 +65,11 @@ const RightNav = ({ open }) => {
         </Link>
       </li>
       <li>
+        <Link to="skills" spy={true} smooth={true} offset={-30} duration={500}>
+          SKILLS
+        </Link>
+      </li>
+      <li>
         <Link to="project" spy={true} smooth={true} offset={-30} duration={500}>
           PROJECTS
         </Link>

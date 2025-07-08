@@ -1,23 +1,27 @@
 import styles from "./Contact.module.css";
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import Marker from "../../img/marker.png";
-import Config from "../../config";
 import ThankYou from "../UI/ThankYou";
 import { AnimatePresence } from "framer-motion";
+
 const Contact = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // For now, just show the thank you message
+    // You can implement EmailJS later by adding your config
+    setDone(true);
+    
+    // Uncomment below when you have EmailJS configured
+    /*
     emailjs
       .sendForm(
-        Config.SERVICE_ID,
-        Config.TEMPLATE_ID,
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID", 
         formRef.current,
-        Config.USER_ID
+        "YOUR_USER_ID"
       )
       .then(
         (result) => {
@@ -28,47 +32,96 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+    */
   };
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: Config.API_KEY,
-  });
 
-  if (!isLoaded) return <div>Loading</div>;
   return (
     <div id="contact" className={styles.contact}>
-      <div className={styles.right}>
-        <p data-aos="fade-up-right" className={styles.description}>
-          <b>Interested in my work?</b> Get in touch and send me a message.
-          Always open to build amazing projects.
-        </p>
-        <form ref={formRef} onSubmit={handleSubmit}>
-          <input
-            data-aos="fade-up-right"
-            type="text"
-            placeholder="Name"
-            name="user_name"
-          />
-          <input
-            data-aos="fade-up-right"
-            type="text"
-            placeholder="Subject"
-            name="user_subject"
-          />
-          <input
-            data-aos="fade-up-right"
-            type="text"
-            placeholder="Email"
-            name="user_email"
-          />
-          <textarea
-            data-aos="fade-up-right"
-            rows="5"
-            placeholder="Message"
-            name="message"
-          />
-          <button data-aos="fade-up-right">Submit</button>
-        </form>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.formSection}>
+            <h1 data-aos="fade-up" className={styles.title}>
+              Get In Touch
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100" className={styles.description}>
+              <b>Interested in my work?</b> Get in touch and send me a message.
+              Always open to build amazing projects.
+            </p>
+            
+            <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.inputGroup}>
+                <input
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  type="text"
+                  placeholder="Name"
+                  name="user_name"
+                  required
+                />
+                <input
+                  data-aos="fade-up"
+                  data-aos-delay="250"
+                  type="email"
+                  placeholder="Email"
+                  name="user_email"
+                  required
+                />
+              </div>
+              <input
+                data-aos="fade-up"
+                data-aos-delay="300"
+                type="text"
+                placeholder="Subject"
+                name="user_subject"
+                required
+              />
+              <textarea
+                data-aos="fade-up"
+                data-aos-delay="350"
+                rows="6"
+                placeholder="Message"
+                name="message"
+                required
+              />
+              <button 
+                data-aos="fade-up" 
+                data-aos-delay="400"
+                type="submit"
+                className={styles.submitBtn}
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          
+          <div className={styles.infoSection}>
+            <div data-aos="fade-left" className={styles.infoBox}>
+              <h2 className={styles.infoTitle}>Let's Connect</h2>
+              <p className={styles.infoText}>
+                I'm always excited to discuss new opportunities, 
+                collaborate on interesting projects, or just have 
+                a chat about AI, ML, and technology.
+              </p>
+              
+              <div className={styles.contactInfo}>
+                <div className={styles.contactItem}>
+                  <h3>Email</h3>
+                  <p>gowthamrdyy@gmail.com</p>
+                </div>
+                <div className={styles.contactItem}>
+                  <h3>Location</h3>
+                  <p>Available for remote work</p>
+                </div>
+                <div className={styles.contactItem}>
+                  <h3>Response Time</h3>
+                  <p>Usually within 24 hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <AnimatePresence
         initial={false}
         exitBeforeEnter={true}
@@ -82,31 +135,6 @@ const Contact = () => {
           />
         )}
       </AnimatePresence>
-
-      <div
-        data-aos="fade-left"
-        data-aos-duration="1500"
-        className={styles.left}
-      >
-        <GoogleMap
-          zoom={5}
-          center={{ lat: 33.838000707701006, lng: -117.86423156003966 }}
-          mapContainerClassName={styles.map}
-          options={{
-            mapId: Config.MAP_ID,
-            disableDefaultUI: true,
-            gestureHandling: "greedy",
-          }}
-        >
-          <MarkerF
-            icon={{
-              url: Marker,
-              scaledSize: new window.google.maps.Size(30, 50),
-            }}
-            position={{ lat: 33.838000707701006, lng: -117.86423156003966 }}
-          />
-        </GoogleMap>
-      </div>
     </div>
   );
 };
