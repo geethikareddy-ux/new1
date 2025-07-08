@@ -1,10 +1,13 @@
 .projectList {
-  height: 100vh;
-    padding: 50px 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  min-height: 100vh;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #000000;
+  position: relative;
+  z-index: 1;
 }
 
 .texts {
@@ -25,21 +28,50 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
-
-
-@media screen and (max-width: 390px) {
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
   .projectList {
-    padding: 10px;
+    padding: 60px 50px;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .projectList {
+    padding: 40px 20px;
+    min-height: auto;
   }
 
   .texts {
     width: 100%;
   }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .list {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .projectList {
+    padding: 30px 15px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
 
   .description {
     display: none;
   }
+}
 
 }

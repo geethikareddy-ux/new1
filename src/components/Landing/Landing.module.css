@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .photoOverlay {
@@ -133,24 +134,25 @@
   font-weight: bold;
 }
 
-
-@media screen and (max-width: 390px) {
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
   .photoOverlay {
     width: 400px;
     height: 400px;
   }
   
-
   .landing {
     flex-direction: column;
+    height: 100vh;
   }
 
   .leftWrapper {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 100px;
+    gap: 60px;
     height: 100%;
+    padding: 20px;
   }
   
   .intro {
@@ -166,6 +168,7 @@
   }
 }
 
+/* Tablet Styles */
 @media screen and (max-width: 768px) {
   .photoOverlay {
     width: 500px;
@@ -181,6 +184,7 @@
   }
 }
 
+/* Large Tablet Styles */
 @media screen and (max-width: 1024px) {
   .photoOverlay {
     width: 600px;
