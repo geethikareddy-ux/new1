@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Burger from "./Burger";
 import { useState, useEffect } from "react";
 
 const Nav = styled.nav`
@@ -30,37 +29,70 @@ const Signature = styled.div`
   }
 `;
 
-const LocationTime = styled.div`
+const RightSection = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 20px;
+`;
+
+const LocationTimeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   color: #cccccc;
-  line-height: 1.2;
   
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-const Location = styled.div`
-  font-weight: 300;
-`;
-
-const Time = styled.div`
-  font-weight: 400;
-  color: #4a9eff;
-`;
-const Navbar = () => {
 const GreenDot = styled.div`
   width: 8px;
   height: 8px;
   background-color: #00ff00;
   border-radius: 50%;
-  margin-bottom: 4px;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
 `;
 
+const LocationText = styled.span`
+  font-weight: 300;
+`;
+
+const TimeText = styled.span`
+  font-weight: 400;
+  color: #4a9eff;
+  margin-left: 8px;
+`;
+
+const ResumeButton = styled.a`
+  background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 158, 255, 0.4);
+    background: linear-gradient(135deg, #5aa3ff 0%, #1a75d9 100%);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+`;
+const Navbar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -75,19 +107,27 @@ const GreenDot = styled.div`
     return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit',
       hour12: true
     });
   };
+
   return (
     <Nav data-aos="fade-down">
       <Signature>Gowtham</Signature>
-      <LocationTime>
-        <GreenDot />
-        <Location>Ananthapur, Andhra Pradesh</Location>
-        <Time>{formatTime(currentTime)}</Time>
-      </LocationTime>
-      <Burger />
+      <RightSection>
+        <LocationTimeContainer>
+          <GreenDot />
+          <LocationText>Ananthapur, Andhra Pradesh</LocationText>
+          <TimeText>{formatTime(currentTime)}</TimeText>
+        </LocationTimeContainer>
+        <ResumeButton 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Resume
+        </ResumeButton>
+      </RightSection>
     </Nav>
   );
 };
