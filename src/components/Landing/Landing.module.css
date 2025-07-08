@@ -13,9 +13,8 @@
   z-index: 3;
   width: 500px;
   height: 500px;
-  border-radius: 50%;
   overflow: hidden;
-  animation: photoFloat 6s ease-in-out infinite;
+  animation: popOpen 0.8s ease-out;
 }
 
 .overlayPhoto {
@@ -24,7 +23,6 @@
   object-fit: cover;
   opacity: 1;
   transition: all 0.5s ease;
-  animation: photoRotate 20s linear infinite;
 }
 
 .left {
@@ -89,24 +87,14 @@
   }
 }
 
-@keyframes photoFloat {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0px);
-  }
-  50% {
-    transform: translate(-50%, -50%) translateY(-20px);
-  }
-}
-
-@keyframes photoRotate {
+@keyframes popOpen {
   from {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.05);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 }
 
