@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Social from "./components/Social/Social";
 import Navbar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import Preloader from "./components/Preloader/Preloader";
 
@@ -24,6 +25,7 @@ function App() {
           <Skills />
           <ProjectList />
           <Contact />
+          <Footer />
         </>
       )}
     </>

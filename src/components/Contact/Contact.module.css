@@ -53,7 +53,12 @@
 .inputGroup {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 25px;
+}
+
+.inputGroup input {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form input,
@@ -201,7 +206,7 @@
   
   .inputGroup {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
   }
   
   .form input,
