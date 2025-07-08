@@ -81,6 +81,7 @@ const ResumeButton = styled.a`
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   font-weight: 500;
+  margin-left: auto;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
