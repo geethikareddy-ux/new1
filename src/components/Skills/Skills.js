@@ -75,30 +75,6 @@ const Skills = () => {
             </div>
           ))}
         </div>
-
-        <div data-aos="fade-up" data-aos-delay="800" className={styles.creatorHighlight}>
-          <div className={styles.highlightContent}>
-            <h3 className={styles.highlightTitle}>Content Creator & Tech Educator</h3>
-            <p className={styles.highlightText}>
-              Passionate about sharing knowledge through engaging content, tutorials, and educational videos. 
-              Combining technical expertise with creative storytelling to make complex AI/ML concepts accessible to everyone.
-            </p>
-            <div className={styles.creatorStats}>
-              <div className={styles.stat}>
-                <span className={styles.statIcon}>📹</span>
-                <span className={styles.statText}>Video Content</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statIcon}>🎨</span>
-                <span className={styles.statText}>Design & Editing</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statIcon}>📚</span>
-                <span className={styles.statText}>Tech Education</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

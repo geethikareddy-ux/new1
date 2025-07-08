@@ -21,8 +21,8 @@ function App() {
           <Social />
           <Landing />
           <Skills />
-          <ProjectList />
           <About />
+          <ProjectList />
           <Contact />
         </>
       )}

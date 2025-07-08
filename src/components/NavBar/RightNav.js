@@ -80,13 +80,13 @@ const RightNav = ({ open }) => {
         </Link>
       </li>
       <li>
-        <Link to="contact" spy={true} smooth={true} offset={50} duration={500}>
-          CONTACT
+        <Link to="project" spy={true} smooth={true} offset={-30} duration={500}>
+          PROJECTS
         </Link>
       </li>
       <li>
-        <a
-          href="https://drive.google.com/file/d/1JJQJAzv3tKF7ROPnHAwiXPI3bMV5g-0m/view?usp=sharing"
+        <Link to="contact" spy={true} smooth={true} offset={50} duration={500}>
+          CONTACT
           target="__blank"
         >
           RESUME
