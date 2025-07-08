@@ -74,8 +74,9 @@ const Navbar = () => {
     <Nav data-aos="fade-down">
       <Signature>Gowtham</Signature>
       <LocationTime>
-        <Location>Ananthapur, Andhra Pradesh</Location>
-        <Time>{formatTime(currentTime)}</Time>
+        <GreenDot />
+        <LocationText>Ananthapur, Andhra Pradesh</LocationText>
+        <TimeText>{formatTime(currentTime)}</TimeText>
       </LocationTime>
       <Burger />
     </Nav>
