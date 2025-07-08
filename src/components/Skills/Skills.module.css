@@ -39,6 +39,8 @@
   border-radius: 50px;
   margin-bottom: 20px;
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
