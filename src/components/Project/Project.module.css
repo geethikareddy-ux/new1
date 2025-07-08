@@ -46,9 +46,20 @@
 
 
 
-@media screen and (max-width: 390px) {
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
   .project {
-    width: 90%;
-    height: 20vh;
+    width: 100%;
+    height: 30vh;
+    margin: 15px 0;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .project {
+    width: 100%;
+    height: 25vh;
+    margin: 10px 0;
   }
 }

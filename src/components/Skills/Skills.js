@@ -46,10 +46,6 @@ const Skills = () => {
           <h1 data-aos="fade-up" className={styles.title}>
             Skills & Expertise
           </h1>
-          <div data-aos="fade-up" data-aos-delay="100" className={styles.contentCreatorBadge}>
-            <span className={styles.badgeIcon}>🎥</span>
-            <span className={styles.badgeText}>Content Creator</span>
-          </div>
           <p data-aos="fade-up" data-aos-delay="200" className={styles.subtitle}>
             From AI/ML development to content creation - building the future with code and creativity
           </p>

@@ -8,7 +8,7 @@ const About = () => {
           <div className={styles.imageSection}>
             <div className={styles.imageWrapper}>
               <img 
-                src={require("../../img/1750838795195.jpg")} 
+                src={require("../../img/1750838905724.jpg")} 
                 alt="Gowtham Sree Charan Reddy" 
                 className={styles.profileImage}
               />
