@@ -80,15 +80,12 @@ const RightNav = ({ open }) => {
         </Link>
       </li>
       <li>
-        <Link to="project" spy={true} smooth={true} offset={-30} duration={500}>
-          PROJECTS
+        <Link to="contact" spy={true} smooth={true} offset={50} duration={500}>
+          CONTACT
         </Link>
       </li>
       <li>
-        <Link to="contact" spy={true} smooth={true} offset={50} duration={500}>
-          CONTACT
-          target="__blank"
-        >
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
           RESUME
         </a>
       </li>
