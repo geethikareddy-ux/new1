@@ -5,12 +5,18 @@ import RightNav from "./RightNav";
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
-  position: fixed;
-  top: 15px;
-  right: 20px;
+  position: relative;
   z-index: 20;
-  display: none;
-  @media (max-width: 390px) {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  cursor: pointer;
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -18,7 +24,7 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => (open ? "#ccc" : "#333")};
+    background-color: ${({ open }) => (open ? "#4a9eff" : "#ffffff")};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
@@ -37,15 +43,19 @@ const StyledBurger = styled.div`
 
 const Burger = () => {
   const [open, setOpen] = useState(false);
+  
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
 
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div style={{ backgroundColor: "white" }} />
-        <div style={{ backgroundColor: "white" }} />
-        <div style={{ backgroundColor: "white" }} />
+      <StyledBurger open={open} onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
       </StyledBurger>
-      <RightNav open={open} />
+      <RightNav open={open} setOpen={setOpen} />
     </>
   );
 };
