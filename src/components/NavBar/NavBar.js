@@ -10,10 +10,14 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 40px;
   position: fixed;
   text-align: center;
   z-index: 9999;
+  
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 const Signature = styled.div`
@@ -32,7 +36,8 @@ const Signature = styled.div`
 const RightSection = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
+  flex-shrink: 0;
 `;
 
 const LocationTimeContainer = styled.div`
@@ -42,6 +47,7 @@ const LocationTimeContainer = styled.div`
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   color: #cccccc;
+  white-space: nowrap;
   
   @media (max-width: 768px) {
     display: none;
@@ -69,17 +75,21 @@ const TimeText = styled.span`
 const ResumeButton = styled.a`
   background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
   color: white;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 80px;
+  text-align: center;
   
   &:hover {
     transform: translateY(-2px);
@@ -88,8 +98,15 @@ const ResumeButton = styled.a`
   }
   
   @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+  
+  @media (max-width: 480px) {
     padding: 6px 12px;
     font-size: 11px;
+    min-width: 60px;
   }
 `;
 const Navbar = () => {
