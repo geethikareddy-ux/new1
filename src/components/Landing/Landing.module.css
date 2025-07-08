@@ -10,11 +10,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 3;
   width: 500px;
   height: 500px;
   border-radius: 50%;
   overflow: hidden;
+  animation: photoFloat 6s ease-in-out infinite;
 }
 
 .overlayPhoto {
@@ -22,7 +23,8 @@
   height: 100%;
   object-fit: cover;
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  animation: photoRotate 20s linear infinite;
 }
 
 .left {
@@ -32,7 +34,7 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .right {
@@ -46,24 +48,75 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .intro {
   font-size: 30px;
   font-weight: 300;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 1s ease-out 0.5s both;
 }
 
 .name {
   font-size: 60px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(45deg, #ffffff, #cccccc, #ffffff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out 1s both, gradientShift 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
 
 .description {
   height: 50px;
   font-size: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 1s ease-out 1.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+}
+
+@keyframes photoRotate {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes move {
