@@ -52,6 +52,14 @@ const Time = styled.div`
   color: #4a9eff;
 `;
 const Navbar = () => {
+const GreenDot = styled.div`
+  width: 8px;
+  height: 8px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  margin-bottom: 4px;
+`;
+
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -75,8 +83,8 @@ const Navbar = () => {
       <Signature>Gowtham</Signature>
       <LocationTime>
         <GreenDot />
-        <LocationText>Ananthapur, Andhra Pradesh</LocationText>
-        <TimeText>{formatTime(currentTime)}</TimeText>
+        <Location>Ananthapur, Andhra Pradesh</Location>
+        <Time>{formatTime(currentTime)}</Time>
       </LocationTime>
       <Burger />
     </Nav>
