@@ -41,7 +41,7 @@ const Landing = () => {
             data-aos-duration="2000"
             className={styles.description}
           >
-            AiMl Developer and Designer
+            AiMl Developer • Designer • Content Creator
           </p>
         </div>
       </div>
