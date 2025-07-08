@@ -18,10 +18,11 @@ const Nav = styled.nav`
 `;
 
 const Signature = styled.div`
-  font-family: 'Brush Script MT', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 28px;
-  color: #4a9eff;
-  font-weight: bold;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
   @media (max-width: 768px) {
