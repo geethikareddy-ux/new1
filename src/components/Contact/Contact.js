@@ -1,6 +1,5 @@
 import styles from "./Contact.module.css";
 import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
 import ThankYou from "../UI/ThankYou";
 import { AnimatePresence } from "framer-motion";
 
